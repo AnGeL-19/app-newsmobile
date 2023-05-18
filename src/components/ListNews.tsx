@@ -19,10 +19,15 @@ const ListNews = ({navigation}: any): JSX.Element => {
 
   return (
     <View >
-        <FlatList
-            data={articles} 
-            renderItem={(article)=><ItemNews navigation={navigation} article={article.item}/>}
+      {
+        loading
+        ? <Text>Cargando...</Text>
+        : <FlatList
+          data={articles} 
+          renderItem={(article)=><ItemNews navigation={navigation} article={article.item}/>}
         />
+      }
+        
     </View>
   );
 
