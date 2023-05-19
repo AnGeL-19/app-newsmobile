@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   },
   content: {
     fontSize: 16,
-    fontWeight: 'regular',
+    fontWeight: 'normal',
     color: '#E4E4E4',
   },
   containerLink: {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 });
 
 const News = ({navigation, route}) => {
-  
+
   const article: IArticle = route.params.article;
 
   return (
