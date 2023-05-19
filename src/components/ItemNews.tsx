@@ -1,8 +1,9 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { IArticle } from '../interfaces/article';
 
 interface Props{
-    article: any;
+    article: IArticle;
     navigation: any;
 }
 

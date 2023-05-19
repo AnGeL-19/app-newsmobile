@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
 import {dateFormat} from '../helpers/formatDate';
+import { IArticle } from '../interfaces/article';
 
 const styles = StyleSheet.create({
   container: {
@@ -67,7 +68,8 @@ const styles = StyleSheet.create({
 });
 
 const News = ({navigation, route}) => {
-  const article = route.params.article;
+  
+  const article: IArticle = route.params.article;
 
   return (
     <ScrollView style={styles.container}>
