@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from "react"
 
 export const useNews = () => {
 
+    const [page, setPage] = useState(1)
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(false)
 
@@ -12,11 +13,16 @@ export const useNews = () => {
           setLoading(true)
 
           const response = await fetch(
-            'https://newsapi.org/v2/top-headlines?pageSize=10&country=us&apiKey=fb82d469683e498e9ae85b49eda2590f',
+            `https://newsapi.org/v2/top-headlines?pageSize=10&page=${page}&country=us&apiKey=fb82d469683e498e9ae85b49eda2590f`,
           );
 
           const json = await response.json();
-          setArticles(json.articles);
+
+          if (json.articles && json.articles.length > 0) {
+            setArticles(prev =>prev.concat(json.articles));
+            
+          }
+
           setLoading(false);
 
         } catch (error) {
@@ -24,11 +30,15 @@ export const useNews = () => {
           setLoading(true);
         }
   
-    },[])
+    },[page])
   
     useEffect(() => {
       getArticles()
-    }, [])
+    }, [page])
 
-    return { articles, loading }
+    const nextPage = () => {
+        setPage(prev => prev + 1)
+    }
+
+    return { articles, loading,  nextPage}
 }
