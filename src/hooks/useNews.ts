@@ -11,7 +11,6 @@ export const useNews = () => {
       try {
 
           setLoading(true)
-
           const response = await fetch(
             `https://newsapi.org/v2/top-headlines?pageSize=10&page=${page}&country=us&apiKey=fb82d469683e498e9ae85b49eda2590f`,
           );
@@ -20,7 +19,6 @@ export const useNews = () => {
 
           if (json.articles && json.articles.length > 0) {
             setArticles(prev =>prev.concat(json.articles));
-            
           }
 
           setLoading(false);
