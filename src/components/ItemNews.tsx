@@ -51,7 +51,6 @@ const styles = StyleSheet.create({
 
 const ItemNews = ({navigation,article}: Props) => {
 
-
   const handlePress = () => {
     navigation.navigate({
       name: 'News',
@@ -71,28 +70,20 @@ const ItemNews = ({navigation,article}: Props) => {
         }
       </View>
       <View style={styles.padding}>
-
         <View style={styles.containerTitle}>
           <Text ellipsizeMode='tail' numberOfLines={3} style={styles.title}>{article.title}</Text>
         </View>
-        
-
         <View style={styles.containerDescription}>
           <Text ellipsizeMode='tail' numberOfLines={3} style={styles.description}>{article.description}</Text>
         </View>
-        
         <View style={styles.containerLink}>
           <TouchableOpacity onPress={handlePress}>
             <Text style={styles.link}>Show more</Text>
           </TouchableOpacity>
         </View>
-        
-        
       </View>
     </View>
   );
-};
-
-
+}
 
 export default ItemNews;

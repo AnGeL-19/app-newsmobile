@@ -1,8 +1,7 @@
 import React from 'react';
-import {FlatList, View, StyleSheet, ActivityIndicator, ScrollView} from 'react-native';
+import {FlatList, View, StyleSheet, ActivityIndicator} from 'react-native';
 import ItemNews from './ItemNews';
 import { useNews } from '../hooks/useNews';
-
 
 const styles = StyleSheet.create({
     container: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
+import {StyleSheet, SafeAreaView} from 'react-native';
 import ListNews from '../components/ListNews'
 
 const styles = StyleSheet.create({
@@ -21,7 +21,5 @@ const Home = ({navigation}: any): JSX.Element => {
     </SafeAreaView>
   )
 }
-
-
 
 export default Home;
