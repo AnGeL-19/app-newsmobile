@@ -24,17 +24,14 @@ const ListNews = ({navigation}: any): JSX.Element => {
 
   return (
     <View style={styles.container}>
-
       <FlatList
         onEndReached={nextPage}
         data={articles} 
         renderItem={(article)=><ItemNews navigation={navigation} article={article.item}/>}
       />
-
       <View style={styles.loading}>
         <ActivityIndicator animating={loading} color="white" size="large"/>
-      </View> 
-         
+      </View>        
     </View>
   );
 
