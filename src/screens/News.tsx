@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const News = ({navigation, route}) => {
+const News = ({navigation, route}: any) => {
 
   const article: IArticle = route.params.article;
 
